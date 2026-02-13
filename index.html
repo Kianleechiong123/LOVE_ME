@@ -50,16 +50,24 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
-            width: 300px;
-            height: 200px;
-            background: linear-gradient(135deg, #fff9e6 0%, #ffefba 100%);
-            border: 2px solid #d4af37;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             z-index: 10;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 24px,
+                    #e8e8e8 24px,
+                    #e8e8e8 25px
+                );
         }
         
         .letter.open {
@@ -68,21 +76,29 @@
         }
         
         .letter-content {
-            text-align: center;
-            color: #8b4513;
+            text-align: left;
+            color: #333333;
             font-family: 'Georgia', serif;
+            font-size: 13px;
+            line-height: 25px;
+            height: 100%;
+            overflow-y: auto;
         }
         
         .letter-content h3 {
-            margin-bottom: 15px;
-            color: #d4af37;
-            font-size: 18px;
+            margin-bottom: 20px;
+            color: #222222;
+            font-size: 16px;
+            text-align: center;
+            font-weight: normal;
+            font-style: italic;
         }
         
         .letter-content p {
-            margin: 10px 0;
-            font-size: 14px;
-            line-height: 1.6;
+            margin: 0 0 25px 0;
+            font-size: 13px;
+            line-height: 25px;
+            text-indent: 30px;
         }
     </style>
 </head>
