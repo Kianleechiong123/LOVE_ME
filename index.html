@@ -94,6 +94,11 @@
             font-style: italic;
         }
         
+        .envelope-wrapper.open .envelope-image {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
         .letter-content p {
             margin: 0 0 25px 0;
             font-size: 13px;
@@ -127,6 +132,8 @@
 <script>
     function openEnvelope() {
         const letter = document.getElementById('letter');
+        const wrapper = document.querySelector('.envelope-wrapper');
         letter.classList.toggle('open');
+        wrapper.classList.toggle('open');
     }
 </script>
