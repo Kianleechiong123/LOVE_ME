@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Envelope</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .envelope-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .envelope-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #fff9e6 0%, #ffefba 100%);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        
+        .letter.open {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        
+        .letter-content {
+            text-align: center;
+            color: #8b4513;
+            font-family: 'Georgia', serif;
+        }
+        
+        .letter-content h3 {
+            margin-bottom: 15px;
+            color: #d4af37;
+            font-size: 18px;
+        }
+        
+        .letter-content p {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper" onclick="openEnvelope()">
+            <img src="images/red_envelope.png" alt="Red envelope with heart ornament" class="envelope-image">
+            <div class="letter" id="letter">
+                <div class="letter-content">
+                    <h3>Happy Valentine's Day Mommy,</h3>
+                    <p>Ito lang muna bigay ko sayo love letter. Wala muna ma bibigay si daddy chocolate, flower and gift, pero makakaya. Kulang sayo ngayon love letter galing daddy sa aking damdamin ko para sayo at sa aking puso din galing ang aking mga salita pag-mamahal ko sa akin. Mahal maging asawa ko subra po salamat sayo mahal ko mommy.</p>
+                    <p>Alam mo yung simula na kilala kita po, lage na ako sasaya at lage na din ako matapang sa mga Gawain ko sa school at sa ating pangarap sa atin dalawa dahil sayo kasi nanjan ka lage nag support sa akin. Lalo yung kiss mo sa akin, yun talaga best sa feeling sa aking damdamin, nga subrang sarap talaga ang halik mo sa akin parang lang ako sa langit subra sarap sa pakiramdam sa akin puso at sa aking damdamin.</p>
+                    <p>At sarap din pakiramdam nga ginawa mo para sa akin pag-alaga kasi subra talaga pag-alaga mo sa akin po at subra ko na gustohan pag alaga mo sa akin. Alam mo mommy lage talaga smile sa lage kita inisip po nga subra sarap sa pakiramdam nga subra ganda talaga asawa ko at subra pa mag alaga sa akin, subra din ako masaya nga binigyan talaga sa akin ni Jesus nga dumating ka sa aking buhay nga subra pag alaga mo sa akin lalo na yung pag-mamahal mo sa akin kaya lage ako pasalamant sa Jesus salamat nga dumating ka sa akin mahal ko mommy subra talaga ako masaya po.</p>
+                    <p>Kaya ayaw ko mawala ka sa aking buhay ikaw lang gusto ko mommy. Alam mo mommy gusto talaga kita pakasalan po, ikaw lang talaga mommy wala talaga ibang isip nga ikaw Lang babae subra saya sa aking buhay nga dumating ka sa akin lalo na pag kasal na tayo mommy doon na talaga lahat mga sabihin ko para sayo po nga gaano ako masaya at matapang dahil nanjan ka sa akin nga support sa akin at pag-mamahal mo sa akin po.</p>
+                    <p>Mommy alam mo po lage ko din inisip nga kasal tayo dalawa po kadalasan iiyak din ako po kasi isip ko din nga gaano ka subraganda kapag mag suot ka ng wedding gown po subra talaga iiyak po, lalo sa totoo sa kasal na po doon ko talaga buhos lahat mga iiyak ko parang hindi ako titigil sa pag iiyak sa subra saya. Mommy ikaw lang talaga parangarap ko po lalo na kasal tayo po.</p>
+                    <p><strong>Mommy mahal kita subra subra po talaga po lahat ng damdamin ko at puso po ikaw lang talaga po mommy.</strong></p>
+                    <p><strong>Happy Valentine's Day sa aking mahal ko mommy!</strong></p>
+                    <p><strong>I LOVE YOU MAHAL KO MOMMY ❤️</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function openEnvelope() {
+        const letter = document.getElementById('letter');
+        letter.classList.toggle('open');
+    }
+</script>
