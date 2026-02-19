@@ -527,15 +527,23 @@
     
     <!-- Confetti container -->
     <div id="confetti-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
+    
+    <!-- Audio for birthday music -->
+    <audio id="birthday-music" preload="auto" loop>
+      <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/happy-birthday-song.mp3" type="audio/mpeg">
+      <source src="https://audio-previews.elements.envatousercontent.com/files/632916/preview.mp3" type="audio/mpeg">
+      <!-- Fallback: Create a simple tone if online sources fail -->
+      <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    </audio>
   </div>
 
   <script>
     const defaultConfig = {
       birthday_greeting: 'Happy Birthday Mahal ko Mommy❤️❤️!',
-      birthday_message: 'Wishing to you mommy nga lagaan mo ako mabuti habang lagaan din kita mabuti para sa akin mahal mommy and nandito lang si daddy lage para ang lage ako supporta sayo mommy and pa tuloy parin ganda mo para sa akin po and yang sa subra cute mo po Mommy lahat ano miron sayo akin lang po ang gandahan mo, cute, mapag-mahal, mag-alaga and ako lang lage ma tatawag sayo mommy And please mommy ako lang daddy mo po ayaw ko mapunta ka sa iba po ito lang Muna wish ko para sa aking mimahal ko maging asawa ko mommy i Love You Mommmy mwahhhhh',
+      birthday_message: 'Wishing to you mommy nga lagaan mo ako mabuti and tuloy mo parin pag-mamahal mo sa aki at Mommy lagaan din kita mabuti para sa akin mahal ko mommy and nandito lang si daddy para supportahan kita mahal ko mommy and pa tuloy parin ganda mo para sa akin po and yang sa subra cute mo po Mommy lahat ano miron sayo akin lang po ang gandahan mo, cute, mapag-mahal, mag-alaga and ako lang lage ma tatawag sayo mommy And please mommy ako lang daddy mo po ayaw ko mapunta ka sa iba po at ito lang Muna wish ko para sa aking mimahal ko maging asawa ko mommy i Love You Mommmy mwahhhhh',
       birthday_from: 'I Love You mahal ko Mommy ❤️',
       monthsary_greeting: 'Happy 1 YEAR AND 10 MONTHS Monthsary MAHAL KO MOMMY❤️❤️!',
-      monthsary_message: 'This\'s to our special To day! because its our 1 year and 10Monthsary Mommy Ating Magkasama pag-mamahalan, Subra po ako masaya po nga binigay mo sa akin sa pag-mamahal mo sa akin and pag alaga mo sa akin po at tuloy parin natin ating masaya mag kasama mommy, Supportahan mo parin ako mommy para lalo lalakas si daddy po and supportahan din kita subra mommy kung ano mga gusto mo po bilihin ako na bahala para sayo mommy at Mommy alam mo po okay lang talaga kang daddy po nga nanjan kalang sa bahay po kasi yan talaga gusto ko mommy nga nanjan kalang sa bahy po lalo mag kasama na tayo and kasal na tayo po sa bahay lang ka talaga mommy at mommy ako na bahala para sayo and sa ating dalawa kinabukasan po mommy alam mo mommy subra talga ako masaya po nanjan ka lage para sa akin pangako talaga sayo pakasalan talaga kita po mommy💖 at subra din ako gandahan sayo mommy subrang subra po walang kulang po tapus ikaw lang talaga lage nasa isip ko ikaw lang po mahal kita subra mommy, mommy alam mo din ba kapag na tunganga ako doon ako sa OJT po kapag wala ako ginawa po naisip kita lage po and na miss ko lage ang ganda mo kaya gusto kita lage titignan po kasi yung puso ko subra talaga tibok ng puso ko po and lalo mga mata ko para ayaw kuna close yung mata kasi subra talaga ganda mo talaga mommmy kaya gusto lage makita mukha mo lalo matulog ka mommy gusto ko talaga makita ka po naka tulog po kaya nga nag request ako minsan nga wag off ang camera para makita kita habang natulog parang sarap pakiramdam sa damdamin nga babatayan kita na tutulog kahit hindi ka matulog gusto talaga makita po kahit wala pa ako mga sabihin po gusto talga kita makita and bantayan po kasi lage talaga naka pasok sa akin isip po mommy subra mo talaga ganda po subra din ako masaya mommy, Mommy subra pa talaga ako dami sabihin sayo po sa aking feeling pag mamahal ko sayo and pag-alaga ko sayo and mga pakiramdam ko talaga subra talga mommy saya po ikaw lang subra sapat sa akin po kahit wala kang gift sa akin po okay lang sa akin mashalaga ikaw mommy, Mommy Happy 1 year and 10MONTHSARY mommy, I LOVE YOU SO MUCH MAHAL ko❤️❤️❤️❤️❤️❤️',
+      monthsary_message: 'This\'s to our special To day! because its our 1 year and 10Monthsary Mommy Ating Magkasama pag-mamahalan, Subra po ako masaya po nga binigay mo sa akin sa pag-mamahal mo sa akin and pag alaga mo sa akin po at tuloy parin natin ating masaya mag kasama mommy, Supportahan mo parin ako mommy para lalo lalakas si daddy po and supportahan din kita subra mommy kung ano mga gusto mo po bilihin ako na bahala para sayo mommy at Mommy alam mo po okay lang talaga kang daddy po nga nanjan kalang sa bahay po kasi yan talaga gusto ko mommy nga nanjan kalang sa bahy po lalo mag kasama na tayo and kasal na tayo po sa bahay lang ka talaga mommy at mommy ako na bahala para sayo and sa ating dalawa kinabukasan po mommy alam mo mommy subra talga ako masaya po nanjan ka lage para sa akin pangako talaga sayo pakasalan talaga kita po mommy💖 at subra din ako gandahan sayo mommy subrang subra po walang kulang po tapus ikaw lang talaga lage nasa isip ko ikaw lang po mahal kita subra mommy, mommy alam mo din ba kapag na tunganga ako doon ako sa OJT po kapag wala ako ginawa po naisip kita lage po and na miss ko lage ang ganda mo kaya gusto kita lage titignan po kasi yung puso ko subra talaga tibok ng puso ko po and lalo mga mata ko para ayaw kuna close yung mata kasi subra talaga ganda mo talaga mommmy kaya gusto lage makita mukha mo lalo matulog ka mommy gusto ko talaga makita ka po naka tulog po kaya nga nag request ako minsan nga wag off ang camera para makita kita habang natulog parang sarap pakiramdam sa damdamin nga babatayan kita na tutulog kahit hindi ka matulog gusto talaga makita po kahit wala pa ako mga sabihin po gusto talga kita makita and bantayan po kasi lage talaga naka pasok sa akin isip po mommy subra mo talaga ganda po subra din ako masaya mommy, Mommy subra pa talaga ako dami sabihin sayo po sa aking feeling pag mamahal ko sayo and pag-alaga ko sayo and mga pakiramdam ko talaga subra talga masaya ako mommy po ikaw lang subra sapat sa akin po kahit wala kang gift sa akin po okay lang sa akin mashalaga ikaw mommy, Mommy Happy 1 year and 10MONTHSARY mommy, I LOVE YOU SO MUCH MAHAL ko❤️❤️❤️❤️❤️❤️',
       monthsary_from: 'I\'M HERE ALWAYS FOR YOU MOMMY MY FOREVER IN MY HEART 💖',
       primary_color: '#dc2626',
       accent_color: '#b91c1c',
@@ -595,6 +603,7 @@
       const otherType = type === 'birthday' ? 'monthsary' : 'birthday';
       const otherWrapper = document.getElementById(`envelope-wrapper-${otherType}`);
       const backBtn = document.getElementById('back-button');
+      const birthdayMusic = document.getElementById('birthday-music');
 
       if (!state.centered) {
         // First click - move to center and hide other envelope
@@ -606,9 +615,97 @@
         // Second click - open envelope
         state.opened = true;
         envelope.classList.add('opened');
+        
+        // Play music if it's birthday envelope
+        if (type === 'birthday') {
+          playBirthdaySong();
+          // Add floating hearts effect while music plays
+          createFloatingHearts();
+        }
+        
         setTimeout(createConfetti, 600);
       }
     }
+
+    function playBirthdaySong() {
+      // Store audio context globally so we can stop it later
+      window.currentAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioContext = window.currentAudioContext;
+      
+      const notes = [
+        {freq: 264, duration: 0.5}, // C
+        {freq: 264, duration: 0.5}, // C
+        {freq: 297, duration: 1},    // D
+        {freq: 264, duration: 1},    // C
+        {freq: 352, duration: 1},    // F
+        {freq: 330, duration: 2},    // E
+        {freq: 264, duration: 0.5}, // C
+        {freq: 264, duration: 0.5}, // C
+        {freq: 297, duration: 1},    // D
+        {freq: 264, duration: 1},    // C
+        {freq: 396, duration: 1},    // G
+        {freq: 352, duration: 2}     // F
+      ];
+      
+      let currentTime = audioContext.currentTime;
+      
+      notes.forEach(note => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = note.freq;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0.3, currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + note.duration);
+        
+        oscillator.start(currentTime);
+        oscillator.stop(currentTime + note.duration);
+        
+        currentTime += note.duration + 0.1;
+      });
+    }
+    
+    function createFloatingHearts() {
+      const container = document.body;
+      const colors = ['#ff69b4', '#ff1493', '#ff69b4', '#ffb6c1', '#ffc0cb'];
+      
+      for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.innerHTML = '❤️';
+          heart.style.cssText = `
+            position: fixed;
+            font-size: ${Math.random() * 20 + 15}px;
+            color: ${colors[Math.floor(Math.random() * colors.length)]};
+            left: ${Math.random() * 100}%;
+            bottom: -50px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: floatUp ${Math.random() * 3 + 4}s ease-in-out;
+            opacity: 0.8;
+          `;
+          container.appendChild(heart);
+          
+          setTimeout(() => heart.remove(), 7000);
+        }, i * 300);
+      }
+    }
+    
+    // Add floating animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatUp {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
 
     function goBack() {
       // Reset all states
@@ -616,6 +713,11 @@
       envelopeStates.birthday.opened = false;
       envelopeStates.monthsary.centered = false;
       envelopeStates.monthsary.opened = false;
+
+      // Stop Web Audio music immediately when back is clicked
+      if (window.currentAudioContext) {
+        window.currentAudioContext.close();
+      }
 
       // Remove classes
       document.getElementById('envelope-container-birthday').classList.remove('centered');
