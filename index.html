@@ -1,139 +1,725 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Envelope</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        .envelope-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .envelope-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .envelope-wrapper {
-            position: relative;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        .letter {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 350px;
-            height: 450px;
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            z-index: 10;
-            background-image: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 24px,
-                    #e8e8e8 24px,
-                    #e8e8e8 25px
-                );
-        }
-        
-        .letter.open {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-        
-        .letter-content {
-            text-align: left;
-            color: #333333;
-            font-family: 'Georgia', serif;
-            font-size: 13px;
-            line-height: 25px;
-            height: 100%;
-            overflow-y: auto;
-        }
-        
-        .letter-content h3 {
-            margin-bottom: 20px;
-            color: #222222;
-            font-size: 16px;
-            text-align: center;
-            font-weight: normal;
-            font-style: italic;
-        }
-        
-        .envelope-wrapper.open .envelope-image {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .letter-content p {
-            margin: 0 0 25px 0;
-            font-size: 13px;
-            line-height: 25px;
-            text-indent: 30px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="envelope-wrapper" onclick="openEnvelope()">
-            <img src="images/red_envelope.png" alt="Red envelope with heart ornament" class="envelope-image">
-            <div class="letter" id="letter">
-                <div class="letter-content">
-                    <h3>Happy Valentine's Day Mommy,</h3>
-                    <p>Ito lang muna bigay ko sayo love letter. Wala muna ma bibigay si daddy chocolate, flower and gift, pero makakaya. Kulang sayo ngayon love letter galing daddy sa aking damdamin ko para sayo at sa aking puso din galing ang aking mga salita pag-mamahal ko sa akin. Mahal maging asawa ko subra po salamat sayo mahal ko mommy.</p>
-                    <p>Alam mo yung simula na kilala kita po, lage na ako sasaya at lage na din ako matapang sa mga Gawain ko sa school at sa ating pangarap sa atin dalawa dahil sayo kasi nanjan ka lage nag support sa akin. Lalo yung kiss mo sa akin, yun talaga best sa feeling sa aking damdamin, nga subrang sarap talaga ang halik mo sa akin parang lang ako sa langit subra sarap sa pakiramdam sa akin puso at sa aking damdamin.</p>
-                    <p>At sarap din pakiramdam nga ginawa mo para sa akin pag-alaga kasi subra talaga pag-alaga mo sa akin po at subra ko na gustohan pag alaga mo sa akin. Alam mo mommy lage talaga smile sa lage kita inisip po nga subra sarap sa pakiramdam nga subra ganda talaga asawa ko at subra pa mag alaga sa akin, subra din ako masaya nga binigyan talaga sa akin ni Jesus nga dumating ka sa aking buhay nga subra pag alaga mo sa akin lalo na yung pag-mamahal mo sa akin kaya lage ako pasalamant sa Jesus salamat nga dumating ka sa akin mahal ko mommy subra talaga ako masaya po.</p>
-                    <p>Kaya ayaw ko mawala ka sa aking buhay ikaw lang gusto ko mommy. Alam mo mommy gusto talaga kita pakasalan po, ikaw lang talaga mommy wala talaga ibang isip nga ikaw Lang babae subra saya sa aking buhay nga dumating ka sa akin lalo na pag kasal na tayo mommy doon na talaga lahat mga sabihin ko para sayo po nga gaano ako masaya at matapang dahil nanjan ka sa akin nga support sa akin at pag-mamahal mo sa akin po.</p>
-                    <p>Mommy alam mo po lage ko din inisip nga kasal tayo dalawa po kadalasan iiyak din ako po kasi isip ko din nga gaano ka subraganda kapag mag suot ka ng wedding gown po subra talaga iiyak po, lalo sa totoo sa kasal na po doon ko talaga buhos lahat mga iiyak ko parang hindi ako titigil sa pag iiyak sa subra saya. Mommy ikaw lang talaga parangarap ko po lalo na kasal tayo po.</p>
-                    <p><strong>Mommy mahal kita subra subra po talaga po lahat ng damdamin ko at puso po ikaw lang talaga po mommy.</strong></p>
-                    <p><strong>Happy Valentine's Day sa aking mahal ko mommy!</strong></p>
-                    <p><strong>I LOVE YOU MAHAL KO MOMMY ❤️</strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-
-<script>
-    function openEnvelope() {
-        const letter = document.getElementById('letter');
-        const wrapper = document.querySelector('.envelope-wrapper');
-        letter.classList.toggle('open');
-        wrapper.classList.toggle('open');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Celebration Red Envelopes</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@500;700&display=swap');
+    
+    html, body {
+      height: 100%;
+      margin: 0;
     }
-</script>
+    
+    .font-elegant {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-script {
+      font-family: 'Dancing Script', cursive;
+    }
+    
+    .main-wrapper {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 40px 20px;
+    }
+    
+    .envelopes-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      min-height: 100%;
+    }
+
+    .envelope-wrapper {
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .envelope-wrapper.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .envelope-container {
+      perspective: 1000px;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .envelope-container.centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 900;
+      gap: 0;
+    }
+    
+    .envelope {
+      position: relative;
+      width: 320px;
+      height: 220px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+    
+    .envelope-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      transform-origin: top center;
+      transition: transform 0.6s ease-in-out;
+      z-index: 10;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+    }
+    
+    .envelope.opened .envelope-flap {
+      transform: rotateX(180deg);
+    }
+    
+    .letter {
+      position: fixed;
+      width: 600px;
+      height: 500px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.7);
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+      transition: opacity 0.6s ease-in-out 0.5s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 35px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      text-align: center;
+      opacity: 0;
+      pointer-events: auto;
+      z-index: 2000;
+    }
+    
+    .envelope.opened .letter {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .letter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, currentColor, transparent);
+      opacity: 0.3;
+    }
+
+    .letter::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, currentColor, transparent);
+      opacity: 0.3;
+    }
+
+    .letter-corner {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0.5;
+    }
+
+    .letter-corner-tl {
+      top: 12px;
+      left: 12px;
+    }
+
+    .letter-corner-tr {
+      top: 12px;
+      right: 12px;
+    }
+
+    .letter-corner-bl {
+      bottom: 12px;
+      left: 12px;
+    }
+
+    .letter-corner-br {
+      bottom: 12px;
+      right: 12px;
+    }
+
+    .letter-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .letter-greeting {
+      line-height: 1.2;
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .letter-message {
+      line-height: 1.6;
+      margin-bottom: 14px;
+      font-size: 12px;
+    }
+
+    .letter-from {
+      margin-top: 16px;
+      font-size: 18px;
+    }
+    
+    .seal {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      z-index: 5;
+      transition: opacity 0.3s;
+    }
+    
+    .envelope.opened .seal {
+      opacity: 0;
+    }
+    
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    @keyframes confetti-fall {
+      0% {
+        opacity: 1;
+        transform: translateY(-100%) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+      }
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    
+    .hint-text {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      transition: opacity 0.3s;
+      font-size: 12px;
+      opacity: 1;
+    }
+
+    .envelope-container.centered .hint-text {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .envelope-container.centered .floating {
+      animation: none;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .envelope-label {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .birthday-label {
+      color: #fbbf24;
+    }
+
+    .monthsary-label {
+      color: #f472b6;
+    }
+
+    .zoom-hint {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .envelope-container.centered .zoom-hint {
+      opacity: 1;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2001;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .back-button.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
+    }
+
+    .envelope-front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    @keyframes balloon-bounce {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      25% {
+        transform: translateY(-15px) rotate(8deg) scale(1.05);
+      }
+      50% {
+        transform: translateY(-25px) rotate(-8deg) scale(1.08);
+      }
+      75% {
+        transform: translateY(-15px) rotate(8deg) scale(1.05);
+      }
+    }
+
+    .envelope-container.centered .balloon-float {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="h-full m-0">
+  <div id="app" class="main-wrapper">
+    
+    <!-- Floating sparkles background -->
+    <div id="sparkles-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
+    
+    <!-- Back button -->
+    <button id="back-button" class="back-button" onclick="goBack()">← Back</button>
+    
+    <div class="envelopes-container">
+      <!-- BIRTHDAY ENVELOPE -->
+      <div id="envelope-wrapper-birthday" class="envelope-wrapper">
+        <div class="envelope-label birthday-label">🎂 Birthday</div>
+        <div class="envelope-container" id="envelope-container-birthday">
+          <div id="envelope-birthday" class="envelope floating" onclick="handleEnvelopeClick('birthday')">
+            
+            <!-- Envelope back -->
+            <div class="envelope-back" id="envelope-back-birthday" style="background: linear-gradient(145deg, #dc2626 0%, #b91c1c 100%);"></div>
+            
+            <!-- Front Design with Animated Balloons -->
+            <div class="envelope-front" id="envelope-front-birthday" style="background: linear-gradient(145deg, #dc2626 0%, #b91c1c 100%); border-radius: 8px;">
+              <!-- Animated Balloons Around Envelope -->
+              <div class="balloon-float" style="position: absolute; left: -35px; top: 25px; font-size: 45px; animation: balloon-bounce 3.5s ease-in-out infinite 0s; z-index: 2;">🎈</div>
+              <div class="balloon-float" style="position: absolute; right: -35px; top: 45px; font-size: 45px; animation: balloon-bounce 3.5s ease-in-out infinite 0.5s; z-index: 2;">🎈</div>
+              <div class="balloon-float" style="position: absolute; left: -30px; bottom: 35px; font-size: 45px; animation: balloon-bounce 3.5s ease-in-out infinite 1s; z-index: 2;">🎈</div>
+              <div class="balloon-float" style="position: absolute; right: -30px; bottom: 45px; font-size: 45px; animation: balloon-bounce 3.5s ease-in-out infinite 1.5s; z-index: 2;">🎈</div>
+
+              <svg viewBox="0 0 320 220" style="width: 100%; height: 100%; position: absolute;">
+                <defs>
+                  <linearGradient id="birthdayGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.8"/>
+                    <stop offset="100%" style="stop-color:#daa520;stop-opacity:0.8"/>
+                  </linearGradient>
+                </defs>
+                <!-- Border -->
+                <rect x="15" y="15" width="290" height="190" fill="none" stroke="url(#birthdayGold)" stroke-width="3" rx="4"/>
+                <rect x="20" y="20" width="280" height="180" fill="none" stroke="url(#birthdayGold)" stroke-width="1.5" rx="3"/>
+                
+                <!-- Corner stars -->
+                <text x="35" y="40" font-size="18" text-anchor="middle">⭐</text>
+                <text x="285" y="40" font-size="18" text-anchor="middle">⭐</text>
+                <text x="35" y="190" font-size="18" text-anchor="middle">⭐</text>
+                <text x="285" y="190" font-size="18" text-anchor="middle">⭐</text>
+                
+                <!-- Center circle design -->
+                <circle cx="160" cy="110" r="50" fill="none" stroke="url(#birthdayGold)" stroke-width="2.5"/>
+                <circle cx="160" cy="110" r="40" fill="none" stroke="url(#birthdayGold)" stroke-width="1.5"/>
+                
+                <!-- Main emoji -->
+                <text x="160" y="125" text-anchor="middle" font-size="48">🎂</text>
+              </svg>
+            </div>
+            
+            <!-- Seal -->
+            <div class="seal" id="seal-birthday" style="background: linear-gradient(145deg, #ffd700, #daa520);">
+              <span class="text-2xl">🎂</span>
+            </div>
+            
+            <!-- Envelope flap -->
+            <div class="envelope-flap" id="envelope-flap-birthday" style="background: linear-gradient(145deg, #ef4444 0%, #dc2626 100%);"></div>
+            
+            <!-- Letter inside - Paper Card -->
+            <div class="letter" id="letter-birthday" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); border: 3px solid #fbbf24;">
+              <div class="letter-corner letter-corner-tl">🎂</div>
+              <div class="letter-corner letter-corner-tr">🎉</div>
+              <div class="letter-corner letter-corner-bl">✨</div>
+              <div class="letter-corner letter-corner-br">🎈</div>
+              
+              <div class="letter-content">
+                <div id="birthday-greeting" class="letter-greeting font-script" style="color: #dc2626;">Happy Birthday!</div>
+                <div id="birthday-message" class="letter-message font-elegant" style="color: #78350f;">Wishing you a day filled with joy and happiness!</div>
+                <div id="birthday-from" class="letter-from font-script" style="color: #b91c1c;">With love ❤️</div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <p class="zoom-hint font-elegant text-amber-200 tracking-wider"></p>
+          <p id="hint-birthday" class="hint-text font-elegant text-amber-200 tracking-wider"></p>
+        </div>
+      </div>
+
+      <!-- MONTHSARY ENVELOPE -->
+      <div id="envelope-wrapper-monthsary" class="envelope-wrapper">
+        <div class="envelope-label monthsary-label">💑 Monthsary</div>
+        <div class="envelope-container" id="envelope-container-monthsary">
+          <div id="envelope-monthsary" class="envelope floating" onclick="handleEnvelopeClick('monthsary')">
+            
+            <!-- Envelope back -->
+            <div class="envelope-back" id="envelope-back-monthsary" style="background: linear-gradient(145deg, #ec4899 0%, #be185d 100%);"></div>
+            
+            <!-- Front Design -->
+            <div class="envelope-front" id="envelope-front-monthsary" style="background: linear-gradient(145deg, #ec4899 0%, #be185d 100%); border-radius: 8px;">
+              <svg viewBox="0 0 320 220" style="width: 100%; height: 100%; position: absolute;">
+                <defs>
+                  <linearGradient id="monthsaryGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.8"/>
+                    <stop offset="100%" style="stop-color:#daa520;stop-opacity:0.8"/>
+                  </linearGradient>
+                </defs>
+                <!-- Border -->
+                <rect x="15" y="15" width="290" height="190" fill="none" stroke="url(#monthsaryGold)" stroke-width="3" rx="4"/>
+                <rect x="20" y="20" width="280" height="180" fill="none" stroke="url(#monthsaryGold)" stroke-width="1.5" rx="3"/>
+                
+                <!-- Corner hearts -->
+                <text x="35" y="40" font-size="18" text-anchor="middle">💕</text>
+                <text x="285" y="40" font-size="18" text-anchor="middle">💕</text>
+                <text x="35" y="190" font-size="18" text-anchor="middle">💕</text>
+                <text x="285" y="190" font-size="18" text-anchor="middle">💕</text>
+                
+                <!-- Center circle design -->
+                <circle cx="160" cy="110" r="50" fill="none" stroke="url(#monthsaryGold)" stroke-width="2.5"/>
+                <circle cx="160" cy="110" r="40" fill="none" stroke="url(#monthsaryGold)" stroke-width="1.5"/>
+                
+                <!-- Main emoji -->
+                <text x="160" y="125" text-anchor="middle" font-size="48">💑</text>
+              </svg>
+            </div>
+            
+            <!-- Seal -->
+            <div class="seal" id="seal-monthsary" style="background: linear-gradient(145deg, #ffd700, #daa520);">
+              <span class="text-2xl">💑</span>
+            </div>
+            
+            <!-- Envelope flap -->
+            <div class="envelope-flap" id="envelope-flap-monthsary" style="background: linear-gradient(145deg, #f472b6 0%, #ec4899 100%);"></div>
+            
+            <!-- Letter inside - Paper Card -->
+            <div class="letter" id="letter-monthsary" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f9a8d4 100%); border: 3px solid #f472b6;">
+              <div class="letter-corner letter-corner-tl">💑</div>
+              <div class="letter-corner letter-corner-tr">💕</div>
+              <div class="letter-corner letter-corner-bl">✨</div>
+              <div class="letter-corner letter-corner-br">💝</div>
+              
+              <div class="letter-content">
+                <div id="monthsary-greeting" class="letter-greeting font-script" style="color: #ec4899;">Happy Monthsary!</div>
+                <div id="monthsary-message" class="letter-message font-elegant" style="color: #831843;">Here's to our special moments together!</div>
+                <div id="monthsary-from" class="letter-from font-script" style="color: #be185d;">Forever yours 💖</div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <p class="zoom-hint font-elegant text-pink-200 tracking-wider"></p>
+          <p id="hint-monthsary" class="hint-text font-elegant text-pink-200 tracking-wider"></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Confetti container -->
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none overflow-hidden"></div>
+  </div>
+
+  <script>
+    const defaultConfig = {
+      birthday_greeting: 'Happy Birthday Mahal ko Mommy❤️❤️!',
+      birthday_message: 'Wishing to you mommy nga lagaan mo ako mabuti habang lagaan din kita mabuti para sa akin mahal mommy and nandito lang si daddy lage para ang lage ako supporta sayo mommy and pa tuloy parin ganda mo para sa akin po and yang sa subra cute mo po Mommy lahat ano miron sayo akin lang po ang gandahan mo, cute, mapag-mahal, mag-alaga and ako lang lage ma tatawag sayo mommy And please mommy ako lang daddy mo po ayaw ko mapunta ka sa iba po ito lang Muna wish ko para sa aking mimahal ko maging asawa ko mommy i Love You Mommmy mwahhhhh',
+      birthday_from: 'I Love You mahal ko Mommy ❤️',
+      monthsary_greeting: 'Happy 1 YEAR AND 10 MONTHS Monthsary MAHAL KO MOMMY❤️❤️!',
+      monthsary_message: 'This\'s to our special To day! because its our 1 year and 10Monthsary Mommy Ating Magkasama pag-mamahalan, Subra po ako masaya po nga binigay mo sa akin sa pag-mamahal mo sa akin and pag alaga mo sa akin po at tuloy parin natin ating masaya mag kasama mommy, Supportahan mo parin ako mommy para lalo lalakas si daddy po and supportahan din kita subra mommy kung ano mga gusto mo po bilihin ako na bahala para sayo mommy at Mommy alam mo po okay lang talaga kang daddy po nga nanjan kalang sa bahay po kasi yan talaga gusto ko mommy nga nanjan kalang sa bahy po lalo mag kasama na tayo and kasal na tayo po sa bahay lang ka talaga mommy at mommy ako na bahala para sayo and sa ating dalawa kinabukasan po mommy alam mo mommy subra talga ako masaya po nanjan ka lage para sa akin pangako talaga sayo pakasalan talaga kita po mommy💖 at subra din ako gandahan sayo mommy subrang subra po walang kulang po tapus ikaw lang talaga lage nasa isip ko ikaw lang po mahal kita subra mommy, mommy alam mo din ba kapag na tunganga ako doon ako sa OJT po kapag wala ako ginawa po naisip kita lage po and na miss ko lage ang ganda mo kaya gusto kita lage titignan po kasi yung puso ko subra talaga tibok ng puso ko po and lalo mga mata ko para ayaw kuna close yung mata kasi subra talaga ganda mo talaga mommmy kaya gusto lage makita mukha mo lalo matulog ka mommy gusto ko talaga makita ka po naka tulog po kaya nga nag request ako minsan nga wag off ang camera para makita kita habang natulog parang sarap pakiramdam sa damdamin nga babatayan kita na tutulog kahit hindi ka matulog gusto talaga makita po kahit wala pa ako mga sabihin po gusto talga kita makita and bantayan po kasi lage talaga naka pasok sa akin isip po mommy subra mo talaga ganda po subra din ako masaya mommy, Mommy subra pa talaga ako dami sabihin sayo po sa aking feeling pag mamahal ko sayo and pag-alaga ko sayo and mga pakiramdam ko talaga subra talga mommy saya po ikaw lang subra sapat sa akin po kahit wala kang gift sa akin po okay lang sa akin mashalaga ikaw mommy, Mommy Happy 1 year and 10MONTHSARY mommy, I LOVE YOU SO MUCH MAHAL ko❤️❤️❤️❤️❤️❤️',
+      monthsary_from: 'I\'M HERE ALWAYS FOR YOU MOMMY MY FOREVER IN MY HEART 💖',
+      primary_color: '#dc2626',
+      accent_color: '#b91c1c',
+      monthsary_primary: '#ec4899',
+      monthsary_accent: '#be185d',
+      text_color: '#78350f',
+      monthsary_text: '#831843'
+    };
+
+    let envelopeStates = {
+      birthday: { centered: false, opened: false },
+      monthsary: { centered: false, opened: false }
+    };
+
+    function createSparkles() {
+      const container = document.getElementById('sparkles-container');
+      const colors = ['#ffd700', '#ffec8b', '#fff', '#fbbf24'];
+      
+      for (let i = 0; i < 20; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        sparkle.style.animationDelay = Math.random() * 2 + 's';
+        container.appendChild(sparkle);
+      }
+    }
+
+    function createConfetti() {
+      const container = document.getElementById('confetti-container');
+      const colors = ['#dc2626', '#ffd700', '#ef4444', '#fbbf24', '#fff', '#f87171', '#fef08a', '#ec4899', '#f472b6'];
+      const shapes = ['square', 'circle'];
+      
+      for (let i = 0; i < 80; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)] === 'circle' ? '50%' : '2px';
+        confetti.style.width = (Math.random() * 10 + 5) + 'px';
+        confetti.style.height = (Math.random() * 10 + 5) + 'px';
+        confetti.style.animation = `confetti-fall ${Math.random() * 2 + 2}s ease-out forwards`;
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        container.appendChild(confetti);
+      }
+      
+      setTimeout(() => {
+        container.innerHTML = '';
+      }, 4000);
+    }
+
+    function handleEnvelopeClick(type) {
+      const state = envelopeStates[type];
+      const container = document.getElementById(`envelope-container-${type}`);
+      const envelope = document.getElementById(`envelope-${type}`);
+      const otherType = type === 'birthday' ? 'monthsary' : 'birthday';
+      const otherWrapper = document.getElementById(`envelope-wrapper-${otherType}`);
+      const backBtn = document.getElementById('back-button');
+
+      if (!state.centered) {
+        // First click - move to center and hide other envelope
+        state.centered = true;
+        container.classList.add('centered');
+        otherWrapper.classList.add('hidden');
+        backBtn.classList.add('visible');
+      } else if (!state.opened) {
+        // Second click - open envelope
+        state.opened = true;
+        envelope.classList.add('opened');
+        setTimeout(createConfetti, 600);
+      }
+    }
+
+    function goBack() {
+      // Reset all states
+      envelopeStates.birthday.centered = false;
+      envelopeStates.birthday.opened = false;
+      envelopeStates.monthsary.centered = false;
+      envelopeStates.monthsary.opened = false;
+
+      // Remove classes
+      document.getElementById('envelope-container-birthday').classList.remove('centered');
+      document.getElementById('envelope-container-monthsary').classList.remove('centered');
+      document.getElementById('envelope-wrapper-birthday').classList.remove('hidden');
+      document.getElementById('envelope-wrapper-monthsary').classList.remove('hidden');
+      document.getElementById('envelope-birthday').classList.remove('opened');
+      document.getElementById('envelope-monthsary').classList.remove('opened');
+      document.getElementById('back-button').classList.remove('visible');
+
+      // Clear any confetti
+      document.getElementById('confetti-container').innerHTML = '';
+    }
+
+    function onConfigChange(config) {
+      // Update Birthday Envelope
+      document.getElementById('birthday-greeting').textContent = config.birthday_greeting || defaultConfig.birthday_greeting;
+      document.getElementById('birthday-message').textContent = config.birthday_message || defaultConfig.birthday_message;
+      document.getElementById('birthday-from').textContent = config.birthday_from || defaultConfig.birthday_from;
+      
+      // Update Monthsary Envelope
+      document.getElementById('monthsary-greeting').textContent = config.monthsary_greeting || defaultConfig.monthsary_greeting;
+      document.getElementById('monthsary-message').textContent = config.monthsary_message || defaultConfig.monthsary_message;
+      document.getElementById('monthsary-from').textContent = config.monthsary_from || defaultConfig.monthsary_from;
+      
+      // Update colors
+      const birthdayPrimary = config.primary_color || defaultConfig.primary_color;
+      const birthdayAccent = config.accent_color || defaultConfig.accent_color;
+      const birthdayText = config.text_color || defaultConfig.text_color;
+      
+      const monthsaryPrimary = config.monthsary_primary || defaultConfig.monthsary_primary;
+      const monthsaryAccent = config.monthsary_accent || defaultConfig.monthsary_accent;
+      const monthsaryText = config.monthsary_text || defaultConfig.monthsary_text;
+      
+      // Birthday colors
+      document.getElementById('birthday-greeting').style.color = birthdayPrimary;
+      document.getElementById('birthday-message').style.color = birthdayText;
+      document.getElementById('birthday-from').style.color = birthdayAccent;
+      document.getElementById('envelope-back-birthday').style.background = `linear-gradient(145deg, ${birthdayPrimary} 0%, ${birthdayAccent} 100%)`;
+      document.getElementById('envelope-flap-birthday').style.background = `linear-gradient(145deg, ${birthdayPrimary} 0%, ${birthdayAccent} 100%)`;
+      document.getElementById('envelope-front-birthday').style.background = `linear-gradient(145deg, ${birthdayPrimary} 0%, ${birthdayAccent} 100%)`;
+      
+      // Monthsary colors
+      document.getElementById('monthsary-greeting').style.color = monthsaryPrimary;
+      document.getElementById('monthsary-message').style.color = monthsaryText;
+      document.getElementById('monthsary-from').style.color = monthsaryAccent;
+      document.getElementById('envelope-back-monthsary').style.background = `linear-gradient(145deg, ${monthsaryPrimary} 0%, ${monthsaryAccent} 100%)`;
+      document.getElementById('envelope-flap-monthsary').style.background = `linear-gradient(145deg, ${monthsaryPrimary} 0%, ${monthsaryAccent} 100%)`;
+      document.getElementById('envelope-front-monthsary').style.background = `linear-gradient(145deg, ${monthsaryPrimary} 0%, ${monthsaryAccent} 100%)`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          },
+          {
+            get: () => config.monthsary_primary || defaultConfig.monthsary_primary,
+            set: (value) => { config.monthsary_primary = value; window.elementSdk.setConfig({ monthsary_primary: value }); }
+          },
+          {
+            get: () => config.monthsary_accent || defaultConfig.monthsary_accent,
+            set: (value) => { config.monthsary_accent = value; window.elementSdk.setConfig({ monthsary_accent: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['birthday_greeting', config.birthday_greeting || defaultConfig.birthday_greeting],
+        ['birthday_message', config.birthday_message || defaultConfig.birthday_message],
+        ['birthday_from', config.birthday_from || defaultConfig.birthday_from],
+        ['monthsary_greeting', config.monthsary_greeting || defaultConfig.monthsary_greeting],
+        ['monthsary_message', config.monthsary_message || defaultConfig.monthsary_message],
+        ['monthsary_from', config.monthsary_from || defaultConfig.monthsary_from]
+      ]);
+    }
+
+    createSparkles();
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d0616be659d2102',t:'MTc3MTUwNzUxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
